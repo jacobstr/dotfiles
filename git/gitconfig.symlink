@@ -1,33 +1,29 @@
-# Sample gitconfig
-#
-# You probably want to change the [user] section here since you are not me.
-
-[hub]
-        protocol = https
 [user]
-        name = Zach Holman
-        email = zach@zachholman.com
-[credential]
-        helper = osxkeychain
-[alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
-        count   = !git shortlog -sn
-[color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+	name = jacobstr
+	email = jacobstr@gmail.com
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-[apply]
-        whitespace = nowarn
-[mergetool]
-        keepBackup = false
-[difftool]
-        prompt = false
-[help]
-        autocorrect = 1
+	excludesfile = /Users/jacob/.gitignore_global
+  #autocrlf = input
+  #safecrlf = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = osxkeychain
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --decorate --pretty=oneline --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+[color]
+	ui = true
+[diff]
+	tool = p4merge
+[merge]
+	tool = p4merge
