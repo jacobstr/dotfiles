@@ -4,6 +4,10 @@ alias dotrc='. ~/.zshrc'
 alias zshconfig="vim ~/.zshrc"
 alias zshenv="vim ~/.zshenv"
 
+# Serve a directory with pythons server
+alias httpserve="python -m SimpleHTTPServer"
+alias a2restart="sudo /usr/sbin/apachectl restart"
+
 # Zsh Directory Bookmarks
 alias m1='alias g1="cd `pwd`"'
 alias m2='alias g2="cd `pwd`"'
@@ -19,3 +23,4 @@ alias lma='alias -L|grep -e "alias g[0-9]"|grep -v "alias m"|sed "s/alias //"'
 touch ~/.bookmarks
 source ~/.bookmarks
 
+source ~/.aliases
