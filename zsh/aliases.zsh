@@ -20,7 +20,15 @@ alias m8='alias g8="cd `pwd`"'
 alias m9='alias g9="cd `pwd`"'
 alias mdump='alias -L|grep -e "alias g[0-9]"|grep -v "alias m" > ~/.bookmarks'
 alias lma='alias -L|grep -e "alias g[0-9]"|grep -v "alias m"|sed "s/alias //"'
+
+# Actualizr project related
+alias ghia='ghi list -- actualize'
+
 touch ~/.bookmarks
 source ~/.bookmarks
 
-source ~/.aliases
+alias raildbr='rake db:drop; rake db:migrate; rake db:fixtures:load; rake db:seed; rake azr:seed:fitocracy'
+alias stoplight='sudo launchctl unload /System/Library/LaunchDaemons/com.apple.metadata.mds.plist'
+alias startlight='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist'
+alias mocha='mocha -r better-stack-traces -r coffee-script'
+alias cdcomp='cd /Users/jacob/School/comp492/comp392_assn1_email'

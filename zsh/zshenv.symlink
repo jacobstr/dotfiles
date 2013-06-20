@@ -1,0 +1,32 @@
+# PYTHON RELATED
+# Pip will not work unless an env is activated.
+export PIP_REQUIRE_VIRTUALENV=true
+# virtualenv should use Distribute instead of legacy setuptools
+export VIRTUALENV_DISTRIBUTE=true
+# Autoenv via homebrew:
+source /usr/local/opt/autoenv/activate.sh
+
+# PHP Related
+export PHP_PATH='/usr/local/opt/php54/bin/php'
+
+# Mover related
+export MOVER_USER=jacob
+export MOVER_KEY=~/.ssh/id_dsa
+export MOVER_ENVIRONMENT=development
+export MOVER_SWARM_ENVIRONMENT=development
+export CLASSPATH=$CLASSPATH:/Users/jacob/Work/3rdParty/github/junit/junit4.12-SNAPSHOT:/Users/jacob/Work/3rdParty/github/junit/junit4.12-SNAPSHOT/junit-4.12-SNAPSHOT-src.jar:/Users/jacob/Work/3rdParty/github/junit/target/main
+
+# Ruby related.
+export ECETUNNEL=1
+# Used to enable contracts in some ruby code I did for ECE 421.
+export RUBY_CONTRACTS=1
+export RAILS_SIMPLECOV=1
+
+# Rails related.
+export RAILS_ENV=development
+alias rubytest="ruby -Itest test/"
+
+export NODE_ENV=localdevelopment
+export HOMEBREW_TEMP=/homebrewtmp
+export EDITOR=vim
+export VISUAL=vim

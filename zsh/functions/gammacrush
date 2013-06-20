@@ -1,0 +1,5 @@
+gammacrush() {
+  pngcrush -force -rem gAMA -rem cHRM -rem iCCP -rem sRGB $1 $1.crushed
+  rm $1
+  mv $1.crushed $1
+}

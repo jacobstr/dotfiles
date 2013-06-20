@@ -1,0 +1,4 @@
+--ignore-dir=node_modules
+--ignore-dir=log
+--type-set=coffee=.coffee
+--type-set=sass=.sass

@@ -1,0 +1,10 @@
+# The use_env call below is a reusable command to activate/create a new Python
+# virtualenv, requiring only a single declarative line of code in your .env files.
+# It only performs an action if the requested virtualenv is not the current one.
+use_env() {
+  typeset venv
+  venv="$1"
+  if [[ "${VIRTUAL_ENV:t}" != "$venv" ]]; then
+    source "$venv/bin/activate"
+  fi
+}

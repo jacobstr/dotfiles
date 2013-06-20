@@ -4,7 +4,7 @@ pidgrep() {
   # $$ is the current pid, 
   # list only pids with
   # -o pid= 
-  ps -e | grep -i $1 | grep -v "grep" | cut -f1 -d" "
+  ps -ae | grep -i $1 | grep -v "grep" | cut -f1 -d" "
 }
 
 # Kill -9 processes via pidgrep.

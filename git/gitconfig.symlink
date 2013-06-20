@@ -3,6 +3,7 @@
 	email = jacobstr@gmail.com
 [core]
 	excludesfile = /Users/jacob/.gitignore_global
+	editor = vim
   #autocrlf = input
   #safecrlf = true
 [difftool "sourcetree"]
@@ -29,3 +30,6 @@
 	tool = p4merge
 [push]
 	default = current
+[github]
+	user = jacobstr
+[ghi]
