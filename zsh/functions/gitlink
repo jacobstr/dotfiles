@@ -1,0 +1,5 @@
+# git branch --set-upstream-to=origin/<my current branch> <my current branch>
+gitlink() {
+  current=$(git rev-parse --abbrev-ref HEAD)
+  git branch --set-upstream-to=origin/$current $current
+}

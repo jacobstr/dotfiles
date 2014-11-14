@@ -1,8 +1,8 @@
 # Add RVM bin path.
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # http://stackoverflow.com/questions/6636066/zsh-rvm-woes-rvm-prompt-doesnt-resolve
-alias rvm-prompt=$HOME/.rvm/bin/rvm-prompt
+# alias rvm-prompt=$HOME/.rvm/bin/rvm-prompt
 
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
@@ -56,20 +56,20 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export COPYFILE_DISABLE=true
 
-export PATH=/opt/local/bin:/usr/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
-export PATH="$(brew --prefix php54)/bin:$PATH"
-export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 
-# Shouldn't have to do this..
-# rvm reload
-# echo "Remove rvm reload from .zshrc"
+source $(brew --prefix php-version)/php-version.sh && php-version 5
+
+# Composer related
+export COMPOSER_HOME="$HOME/.composer"
+export PATH="$COMPOSER_HOME/vendor/bin":$PATH
 
 # Original code for bash from:
 # http://www.huyng.com/archives/quick-bash-tip-directory-bookmarks/492/
 # m1 to mark the cwd, g1 to go to it later.
-
 
 # Z directory jumper
 # Would like a nicer way of including this.
@@ -79,11 +79,32 @@ source $HOME/.dotfiles/z/z.sh
 # For RVM
 # rm -f ~/.zcompdump Fixed issues with rvm not loading but I'm not sure
 # what the side effects were.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-__rvm_project_rvmrc
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# __rvm_project_rvmrc
 
 # Return code
 RPROMPT="%{$fg_no_bold[green]%}%?%{$reset_color%} "$RPROMPT
 
 # Disabel autocorrect
-unsetopt correct
+unsetopt correct_all
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+
+# For Graham's channel 9 project
+export PKG_CONFIG_PATH="$(brew --prefix libffi)/lib/pkgconfig/":$PKG_CONFIG_PATH
+
+# Use vim instead of less as a pager.
+# export PAGER=vimpager
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
+bindkey "\e[5C" forward-word
+bindkey "\e[5D" backward-word
+bindkey "\e\e[C" forward-word
+bindkey "\e\e[D" backward-word
+
+# Wheng moving by word / deleting by word this prevents the deletion of entire
+# folder paths instead of a directory level at a time.
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

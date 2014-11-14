@@ -1,0 +1,5 @@
+stashgrep() {
+  for i in `git stash list | awk -F ':' '{print $1}'`; do
+    git stash show -p $i | grep -H --label="$i" "$1"
+  done
+}

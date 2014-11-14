@@ -1,0 +1,4 @@
+hobo() {
+  current=$(git rev-parse --show-toplevel)
+  VAGRANT_CWD=$current/cookbooks/bursa/.kitchen/kitchen-vagrant/default-ubuntu-1404 vagrant $@
+}

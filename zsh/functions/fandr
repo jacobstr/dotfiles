@@ -1,0 +1,9 @@
+function fandr() {
+  if [ $# -ne 3 ]
+  then
+    echo 'usage: fandr search_string from_regexp to_regexp'
+    return
+  fi
+
+  ack -l --print0 "$1" | xargs -0 -n 1 sed -i "s/$1/$2/g"
+}

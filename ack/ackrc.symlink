@@ -1,4 +1,17 @@
 --ignore-dir=node_modules
+# Ignore fabric download dirs that usually have huge log files
+--ignore-dir=10.0.40.15
+# don't want to ignore this for chef repo
+#--ignore-dir=lib
+ --ignore-dir=vendor
 --ignore-dir=log
+--ignore-dir=build
+--ignore-dir=.vagrant
+--ignore-dir=.godeps
+--ignore-dir=docs
+--ignore-dir=components
+--ignore-dir=static
 --type-set=coffee=.coffee
 --type-set=sass=.sass
+--ignore-file=is:package.xml
+--ignore-file=is:tags

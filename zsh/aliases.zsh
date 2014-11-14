@@ -32,3 +32,9 @@ alias stoplight='sudo launchctl unload /System/Library/LaunchDaemons/com.apple.m
 alias startlight='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist'
 alias mocha='mocha -r better-stack-traces -r coffee-script'
 alias cdcomp='cd /Users/jacob/School/comp492/comp392_assn1_email'
+
+alias gitrecent='git for-each-ref --sort=-committerdate refs/heads/ | head -20'
+alias unixtime='ruby -e "p Time.now.to_i"'
+alias cofify='pbpaste | js2coffee | pbcopy'
+alias yam2json='ruby -ryaml -rjson -e "puts JSON.pretty_generate(YAML.load(ARGF))"'
+alias joltp='MOVER_DATABASE=production MOVER_ENVIRONMENT=development bin/jolt'

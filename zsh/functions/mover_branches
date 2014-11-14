@@ -1,0 +1,4 @@
+function mover_branches {
+  mover_dir=/mover
+  for d ($mover_dir/*/.git(/)) {echo -n ${${d%/.git}#$mover_dir/}::; git --git-dir=$d --work-tree=${d%.git} rev-parse --abbrev-ref HEAD}
+}
