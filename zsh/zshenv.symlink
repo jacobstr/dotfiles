@@ -1,7 +1,7 @@
 # Mover related
 export MOVER_USER=jacob
 export MOVER_KEY=~/.ssh/id_dsa
-export MOVER_ENVIRONMENT=swarms-development
+export MOVER_ENVIRONMENT=devbox
 export CLASSPATH=$CLASSPATH:/Users/jacob/Work/3rdParty/github/junit/junit4.12-SNAPSHOT:/Users/jacob/Work/3rdParty/github/junit/junit4.12-SNAPSHOT/junit-4.12-SNAPSHOT-src.jar:/Users/jacob/Work/3rdParty/github/junit/target/main
 
 # Ruby related.

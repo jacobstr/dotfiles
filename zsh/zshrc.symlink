@@ -45,7 +45,7 @@ plugins=(git history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
-cdpath=(~/Work ~/School ~/School/F2012 ~/Work/mover ~/Work/3rdParty/github)
+cdpath=(~/Work ~/School ~/School/F2012 ~/Work/mover ~/Work/3rdParty/github, $GOPATH/src/github.com)
 
 # Add mysql to path
 # Colors, Yay
@@ -108,3 +108,4 @@ bindkey "\e\e[D" backward-word
 # folder paths instead of a directory level at a time.
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+php-version 5.6

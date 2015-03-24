@@ -1,0 +1,14 @@
+# vim:ft=zsh
+# reload the zshrc / some functions
+# Usage: reload [function names]
+
+if [[ ${#*} == 0 ]] {
+	source ~/.zshrc
+	rehash
+} else {
+	local function
+	for function in ${@}; {
+		unfunction ${function}
+		autoload ${function}
+	}
+}

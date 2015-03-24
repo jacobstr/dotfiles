@@ -8,10 +8,11 @@
 --ignore-dir=build
 --ignore-dir=.vagrant
 --ignore-dir=.godeps
+--ignore-dir=transform-v1.3
 --ignore-dir=docs
---ignore-dir=components
 --ignore-dir=static
 --type-set=coffee=.coffee
+--type-set=javascript:ext:jsx,js,es6
 --type-set=sass=.sass
 --ignore-file=is:package.xml
 --ignore-file=is:tags

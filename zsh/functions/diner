@@ -1,0 +1,4 @@
+diner() {
+  current=$(git rev-parse --show-toplevel)
+  (cd $current/cookbooks/bursa; kitchen $@)
+}

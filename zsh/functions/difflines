@@ -1,0 +1,20 @@
+# vi: ft=zsh
+difflines() {
+    local path
+    local line
+    while read; do
+        esc=$'\033'
+        if [[ $REPLY =~ ---\ (a/)?.* ]]; then
+            continue
+        elif [[ $REPLY =~ "\+\+\+\ (b/)?([^[:blank:]$esc]+).*" ]]; then
+            path=${match[2]}
+        elif [[ $REPLY =~ "@@\ -[0-9]+(,[0-9]+)?\ \+([0-9]+)(,[0-9]+)?\ @@.*" ]]; then
+            line=${match[2]}
+        elif [[ $REPLY =~ "^($esc\[[0-9;]+m)*([\ +-])" ]]; then
+            echo "$path:$line:$REPLY"
+            if [[ ${match[2]} != - ]]; then
+                ((line++))
+            fi
+        fi
+    done
+}
