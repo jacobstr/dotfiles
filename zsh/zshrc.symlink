@@ -1,14 +1,8 @@
-# Add RVM bin path.
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# http://stackoverflow.com/questions/6636066/zsh-rvm-woes-rvm-prompt-doesnt-resolve
-# alias rvm-prompt=$HOME/.rvm/bin/rvm-prompt
-
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Work
+export PROJECTS=~/PlanetWork
 
 # source every .zsh file in this rep
 for config_file ($DOTFILES/zsh/*.zsh) source $config_file
@@ -45,7 +39,7 @@ plugins=(git history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
-cdpath=(~/Work ~/School ~/School/F2012 ~/Work/mover ~/Work/3rdParty/github, $GOPATH/src/github.com)
+cdpath=(~/PlanetWork)
 
 # Add mysql to path
 # Colors, Yay
@@ -61,12 +55,6 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
-source $(brew --prefix php-version)/php-version.sh && php-version 5
-
-# Composer related
-export COMPOSER_HOME="$HOME/.composer"
-export PATH="$COMPOSER_HOME/vendor/bin":$PATH
-
 # Original code for bash from:
 # http://www.huyng.com/archives/quick-bash-tip-directory-bookmarks/492/
 # m1 to mark the cwd, g1 to go to it later.
@@ -74,13 +62,6 @@ export PATH="$COMPOSER_HOME/vendor/bin":$PATH
 # Z directory jumper
 # Would like a nicer way of including this.
 source $HOME/.dotfiles/z/z.sh
-
-# For iterm2 reuse previous tabs directory
-# For RVM
-# rm -f ~/.zcompdump Fixed issues with rvm not loading but I'm not sure
-# what the side effects were.
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-# __rvm_project_rvmrc
 
 # Return code
 RPROMPT="%{$fg_no_bold[green]%}%?%{$reset_color%} "$RPROMPT
@@ -90,10 +71,6 @@ unsetopt correct_all
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-
-# For Graham's channel 9 project
-export PKG_CONFIG_PATH="$(brew --prefix libffi)/lib/pkgconfig/":$PKG_CONFIG_PATH
 
 # Use vim instead of less as a pager.
 # export PAGER=vimpager
@@ -108,4 +85,3 @@ bindkey "\e\e[D" backward-word
 # folder paths instead of a directory level at a time.
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-php-version 5.6

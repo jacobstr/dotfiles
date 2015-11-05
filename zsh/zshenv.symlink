@@ -1,18 +1,4 @@
-# Mover related
-export MOVER_USER=jacob
-export MOVER_KEY=~/.ssh/id_dsa
-export MOVER_ENVIRONMENT=devbox
 export CLASSPATH=$CLASSPATH:/Users/jacob/Work/3rdParty/github/junit/junit4.12-SNAPSHOT:/Users/jacob/Work/3rdParty/github/junit/junit4.12-SNAPSHOT/junit-4.12-SNAPSHOT-src.jar:/Users/jacob/Work/3rdParty/github/junit/target/main
-
-# Ruby related.
-export ECETUNNEL=1
-# Used to enable contracts in some ruby code I did for ECE 421.
-export RUBY_CONTRACTS=1
-export RAILS_SIMPLECOV=1
-
-# Rails related.
-export RAILS_ENV=development
-alias rubytest="ruby -Itest test/"
 
 export NODE_ENV=development
 export HOMEBREW_TEMP=/homebrewtmp
@@ -21,5 +7,3 @@ export VISUAL=vim
 export TMPDIR=/tmp
 export GOPATH=/Users/jacob/Work/go
 export PATH=$PATH:$GOPATH/bin
-
-eval "$(rbenv init -)"
